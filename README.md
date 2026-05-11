@@ -28,3 +28,25 @@ A responsive Trip Planner Application working as a Todo list for trips (Add, Del
 - `main` - Production branch
 - `develop` - Integration branch
 - `feature/*` - Feature development branches
+
+## Individual Contributions
+### [Student 2 Name] (Full-Stack Developer)
+- Developed responsive HTML layout (`feature/frontend-setup`)
+- Implemented Local Storage backend and logic (`feature/backend-api`)
+- Created CSS styling and dark mode UI (`feature/ui-styling`)
+- Intentionally replicated and resolved a merge conflict for learning purposes.
+
+## Setup Instructions
+### Prerequisites
+- Git
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/pansilukaveed02-cell/Modern_plan_Trip.git
+cd Modern_plan_Trip
+# Open index.html in your browser
+```
+
+## Challenges Faced
+- Managing branches and resolving merge conflicts when deploying multiple feature sets manually.
