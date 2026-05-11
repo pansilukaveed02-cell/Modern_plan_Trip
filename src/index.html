@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Plan Trip</title>
+    <!-- CSS will be added here -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-plane-departure"></i> Trip Planner</h1>
+            <p>Manage your upcoming trips and destinations</p>
+        </header>
+
+        <main>
+            <!-- Add Task Form -->
+            <section class="add-task-section">
+                <form id="trip-form">
+                    <input type="text" id="destination-input" placeholder="Enter destination..." required>
+                    <input type="date" id="date-input" required>
+                    <button type="submit" id="add-btn"><i class="fa-solid fa-plus"></i></button>
+                </form>
+            </section>
+
+            <!-- Filters & Counters -->
+            <section class="controls-section">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Upcoming</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                <div class="task-counter">
+                    <span id="counter">0</span> trips
+                </div>
+            </section>
+
+            <!-- Task List -->
+            <section class="task-list-section">
+                <ul id="trip-list">
+                    <!-- Tasks will be dynamically injected here -->
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Modern Trip Planner © 2026 | Assignment Project</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript will be added here -->
+    <script src="scripts/app.js"></script>
+</body>
+</html>
