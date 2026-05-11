@@ -10,12 +10,12 @@ A modern trip planning application.
 A responsive Trip Planner Application working as a Todo list for trips (Add, Delete, Mark Completed, Filter by All/Active/Completed). 
 
 ## Live Deployment
-🔗 **Live URL:** Vercel (Backend ready)
+🔗 **Live URL:** Vercel (Backend ready) / Netlify (UI ready)
 
 ## Technologies Used
 - HTML5, CSS3, JavaScript
 - GitHub Actions
-- Vercel (Deployment)
+- Vercel and Netlify (Deployment)
 
 ## Features
 - Add/Delete/Mark complete tasks
