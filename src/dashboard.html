@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planner | Premium Dashboard</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                <h1>Wanderlust</h1>
+            </div>
+            
+            <nav class="navigation">
+                <div class="nav-title">Filters</div>
+                <button class="nav-item filter-btn active" data-filter="all">
+                    <i class="fa-solid fa-layer-group"></i> All Trips
+                </button>
+                <button class="nav-item filter-btn" data-filter="active">
+                    <i class="fa-regular fa-calendar-check"></i> Upcoming
+                </button>
+                <button class="nav-item filter-btn" data-filter="completed">
+                    <i class="fa-solid fa-check-double"></i> Completed
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="clear-completed" class="clear-btn">
+                    <i class="fa-solid fa-trash-arrow-up"></i> Clear Completed
+                </button>
+                <button id="logout-btn" class="nav-item filter-btn" style="width: 100%; justify-content: center; margin-top:10px;">
+                    <i class="fa-solid fa-right-from-bracket"></i> Log Out
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div>
+                    <h2>Hello, Traveler 👋</h2>
+                    <p class="subtitle">Let's plan your next big adventure.</p>
+                </div>
+                <div class="stats-card glass-panel flex-center">
+                    <div class="stat-value" id="counter">0</div>
+                    <div class="stat-label">Total Trips</div>
+                </div>
+            </header>
+
+            <!-- Add Task Form -->
+            <section class="add-task-section glass-panel">
+                <form id="trip-form">
+                    <div class="input-group">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" id="destination-input" placeholder="Where do you want to go?" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-regular fa-calendar"></i>
+                        <input type="date" id="date-input" required>
+                    </div>
+                    <button type="submit" id="add-btn" class="primary-btn">
+                        <span>Plan Trip</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Task List -->
+            <section class="task-list-section">
+                <div class="section-header">
+                    <h3>Your Itinerary</h3>
+                </div>
+                <div id="trip-list" class="trip-grid">
+                    <!-- Tasks will be dynamically injected here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript will be added here -->
+    <script src="scripts/backend.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
