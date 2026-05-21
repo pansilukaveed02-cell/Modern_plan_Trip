@@ -24,7 +24,7 @@ A modern, responsive trip planning application that acts as an advanced planner 
 ---
 
 ## 🔗 Live Deployment
-🔗 **Live URL:** [Your Deployed Vercel/Netlify URL]
+🔗 **Live URL:** [https://pansilukaveed02-cell.github.io/Modern_plan_Trip/](https://pansilukaveed02-cell.github.io/Modern_plan_Trip/)
 
 ---
 
