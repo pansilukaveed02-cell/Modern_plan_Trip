@@ -3,55 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Plan Trip</title>
-    <!-- CSS will be added here -->
+    <title>Trip Planner | Premium Dashboard</title>
     <link rel="stylesheet" href="styles/style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
     <div class="app-container">
-        <header>
-            <h1><i class="fa-solid fa-plane-departure"></i> Trip Planner</h1>
-            <p>Manage your upcoming trips and destinations</p>
-        </header>
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                <h1>Wanderlust</h1>
+            </div>
+            
+            <nav class="navigation">
+                <div class="nav-title">Filters</div>
+                <button class="nav-item filter-btn active" data-filter="all">
+                    <i class="fa-solid fa-layer-group"></i> All Trips
+                </button>
+                <button class="nav-item filter-btn" data-filter="active">
+                    <i class="fa-regular fa-calendar-check"></i> Upcoming
+                </button>
+                <button class="nav-item filter-btn" data-filter="completed">
+                    <i class="fa-solid fa-check-double"></i> Completed
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="clear-completed" class="clear-btn">
+                    <i class="fa-solid fa-trash-arrow-up"></i> Clear Completed
+                </button>
+            </div>
+        </aside>
 
-        <main>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div>
+                    <h2>Hello, Traveler 👋</h2>
+                    <p class="subtitle">Let's plan your next big adventure.</p>
+                </div>
+                <div class="stats-card glass-panel flex-center">
+                    <div class="stat-value" id="counter">0</div>
+                    <div class="stat-label">Total Trips</div>
+                </div>
+            </header>
+
             <!-- Add Task Form -->
-            <section class="add-task-section">
+            <section class="add-task-section glass-panel">
                 <form id="trip-form">
-                    <input type="text" id="destination-input" placeholder="Enter destination..." required>
-                    <input type="date" id="date-input" required>
-                    <button type="submit" id="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    <div class="input-group">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" id="destination-input" placeholder="Where do you want to go?" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-regular fa-calendar"></i>
+                        <input type="date" id="date-input" required>
+                    </div>
+                    <button type="submit" id="add-btn" class="primary-btn">
+                        <span>Plan Trip</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </form>
-            </section>
-
-            <!-- Filters & Counters -->
-            <section class="controls-section">
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="active">Upcoming</button>
-                    <button class="filter-btn" data-filter="completed">Completed</button>
-                </div>
-                <div class="task-counter">
-                    <span id="counter">0</span> trips
-                    <button id="clear-completed" class="clear-btn">Clear Completed</button>
-                </div>
             </section>
 
             <!-- Task List -->
             <section class="task-list-section">
-                <ul id="trip-list">
+                <div class="section-header">
+                    <h3>Your Itinerary</h3>
+                </div>
+                <div id="trip-list" class="trip-grid">
                     <!-- Tasks will be dynamically injected here -->
-                </ul>
+                </div>
             </section>
         </main>
-
-        <footer>
-            <p>Modern Trip Planner © 2026 | Assignment Project</p>
-        </footer>
     </div>
 
     <!-- JavaScript will be added here -->

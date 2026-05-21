@@ -57,19 +57,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tripList.innerHTML = '';
         trips.forEach(trip => {
-            const li = document.createElement('li');
-            li.className = `trip-item ${trip.completed ? 'completed' : ''}`;
-            li.innerHTML = `
-                <div class="trip-info">
-                    <input type="checkbox" class="status-check" ${trip.completed ? 'checked' : ''} data-id="${trip.id}">
+            const card = document.createElement('div');
+            card.className = `trip-card ${trip.completed ? 'completed' : ''}`;
+            card.innerHTML = `
+                <div class="trip-card-header">
                     <div>
-                        <strong>${trip.destination}</strong>
-                        <span>${new Date(trip.date).toLocaleDateString()}</span>
+                        <div class="trip-dest">${trip.destination}</div>
+                        <div class="trip-date"><i class="fa-regular fa-calendar"></i> ${new Date(trip.date).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</div>
                     </div>
                 </div>
-                <button class="delete-btn" data-id="${trip.id}"><i class="fa-solid fa-trash"></i></button>
+                <div class="trip-actions">
+                    <label class="status-check-container">
+                        <input type="checkbox" class="status-check" ${trip.completed ? 'checked' : ''} data-id="${trip.id}">
+                        <span class="status-label">${trip.completed ? 'Completed' : 'Upcoming'}</span>
+                    </label>
+                    <button class="delete-btn" data-id="${trip.id}"><i class="fa-solid fa-trash"></i></button>
+                </div>
             `;
-            tripList.appendChild(li);
+            tripList.appendChild(card);
         });
         
         // Update Counter
