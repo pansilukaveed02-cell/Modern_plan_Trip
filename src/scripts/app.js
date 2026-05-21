@@ -25,6 +25,12 @@ class TripAPI {
             localStorage.setItem('trips', JSON.stringify(trips));
         }
     }
+
+    static clearCompleted() {
+        let trips = TripAPI.getTrips();
+        trips = trips.filter(trip => !trip.completed);
+        localStorage.setItem('trips', JSON.stringify(trips));
+    }
 }
 
 // UI Controller Layer
@@ -34,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.getElementById('date-input');
     const tripList = document.getElementById('trip-list');
     const counterDisplay = document.getElementById('counter');
+    const clearBtn = document.getElementById('clear-completed');
     const filterBtns = document.querySelectorAll('.filter-btn');
     
     let currentFilter = 'all';
@@ -102,6 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
             currentFilter = btn.dataset.filter;
             renderTrips();
         });
+    });
+
+    clearBtn.addEventListener('click', () => {
+        TripAPI.clearCompleted();
+        renderTrips();
     });
 
     // Initial Render
